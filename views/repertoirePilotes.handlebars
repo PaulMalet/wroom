@@ -1,0 +1,22 @@
+<h1>Repertoire des pilotes </h1>
+<p> Cliquez sur une lettre :
+{{#each listeInitial}}
+  <a href = "/repertoirePilote/{{this.initial}}">  {{this.initial}} </a>
+{{/each}}
+</p>
+
+<p>
+
+  {{#each listePilotes}}
+    <figure>
+      <img src="/image/pilote/{{this.PHOADRESSE}}" alt="{{this.PHOADRESSE}}" id="imgPilote"/>
+      <figcaption>
+          <a href = "/detailPilote/{{this.PILNUM}}">
+            {{this.PILNOM}} {{this.PILPRENOM}}
+          </a>
+      </figcaption>
+    </figure>
+    {{/each}}
+
+
+</p>

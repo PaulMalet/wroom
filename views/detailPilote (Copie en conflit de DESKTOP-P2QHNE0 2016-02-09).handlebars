@@ -1,0 +1,55 @@
+<h1> Mettre ici la première lettre du nom des pilotes </h1>
+<p> Cliquez sur une lettre :
+{{#each listeInitial}}
+  <a href = "/repertoirePilote/{{this.initial}}">  {{this.initial}} </a>
+{{/each}}
+</p>
+
+
+<!--FAIRE UEN TABLEAU POUR TOUT METTRE DE FACON JOLIE!!!!-->
+
+
+
+{{#if infoPilote}}
+<img src="/image/pilote/{{infoPilote.PHOADRESSE}}" alt="{{infoPilote.PHOADRESSE}}" id="imgPilote"/>
+<table>
+
+   <tr>
+       <td><p><b>Nom :</b>  {{infoPilote.PILNOM}} {{infoPilote.PILPRENOM}}</p></td>
+   </tr>
+
+   <tr>
+      <td><p><b>Date de Naissance :</b> {{infoPilote.PILDATENAIS}}</p></td>
+
+       <td><p><b>Poids :</b>  {{infoPilote.PILPOIDS}}  kg</p></td>
+   </tr>
+
+   <tr>
+      <td><p><b>Nationalité :</b> {{infoPilote.PAYNAT}}</p></td>
+
+       <td><p><b>Taille : </b>{{infoPilote.PILTAILLE}} Cm</p></td>
+   </tr><td>
+   {{#if ecurie.ECUNOM}}
+     <p><b>Ecurie : </b> {{ecurie.ECUNOM}}</p>
+   {{else}}
+     <p><b>Ecurie : </b> Pas d'écurie cette année</p>
+   {{/if}}
+  </td></tr>
+</table>
+
+
+
+
+
+  <p><b>Principaux sponsor(s) :</b>
+
+  {{#each sponsor}}
+    <li><b>{{this.SPONOM}}</b> (<i>{{this.SPOSECTACTIVITE}}</i>)</li>
+  {{/each}}
+
+<p><b>Qui suis je ? :</b> {{infoPilote.PILTEXTE}}</p>
+
+{{#each photo}}
+  <img src="/image/pilote/{{this.PHOADRESSE}}" alt="{{this.PHOCOMMENTAIRE}}" id="imgPilote"/>
+{{/each}}
+{{/if}}

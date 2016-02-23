@@ -1,0 +1,6 @@
+<h1>Liste des circuits enregistrés</h1>
+<ul>
+{{#each listeCircuit}}
+  <li><a href="/detailCircuit/{{this.CIRNUM}}"><img src="/image/pays/{{this.PAYADRDRAP}}" alt="drapeau du pays" id="drapCircuit"/> {{this.CIRNOM}}</a></li>
+{{/each}}
+</ul>
